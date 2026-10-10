@@ -1,0 +1,29 @@
+.signed-in-stack{margin-top:16px}
+.signed-in-stack .auth-signed-in{margin-top:0}
+.github-connect-card,.github-connected-card{margin-top:13px;padding:11px;border:1px solid #303340;border-radius:7px;background:#101219}
+.github-connected-card{position:relative}
+.github-connect-heading{display:flex;gap:8px;align-items:center}
+.github-connect-heading>div{display:grid;gap:4px}
+.github-connect-heading strong{font-size:9px;font-weight:550}
+.github-connect-heading span:not(.github-mark){font-size:8px;color:#8990a0}
+.github-mark{width:23px;height:23px;border-radius:6px;border:1px solid #3b3d4b;background:#1b1c26;color:#bab4ff;display:grid;place-items:center;font-size:12px}
+.github-mark.connected{border-color:#315441;background:#17251e;color:#82cba5}
+.github-connect-button{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding:8px 9px;border:1px solid #514b82;border-radius:5px;background:#26233b;color:#dedaff;text-decoration:none;font-size:9px}
+.github-connect-button:hover{background:#322f4d}
+.integration-pending{font-size:8px;line-height:1.5;color:#8a90a0;margin:9px 0 0}
+.disconnect-button{position:absolute;top:10px;right:10px}
+.repo-preview{margin-top:10px;display:grid;border-top:1px solid #2b2e38}
+.repo-preview>a{min-width:0;display:flex;justify-content:space-between;gap:5px;padding:8px 0;border-bottom:1px solid #282b34;color:#c5c8d2;text-decoration:none;font-size:8px}
+.repo-preview>a span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.repo-preview>a small{flex-shrink:0;color:#8a8f9e;font-size:7px;letter-spacing:.07em}
+html[data-theme="light"] .github-connect-card,html[data-theme="light"] .github-connected-card{background:#fafaff;border-color:#e1e3ee}
+html[data-theme="light"] .github-connect-heading strong{color:#2c3447}
+html[data-theme="light"] .github-connect-heading span:not(.github-mark){color:#727b8e}
+html[data-theme="light"] .github-mark{background:#f0efff;border-color:#dedbfa;color:#665dad}
+html[data-theme="light"] .github-mark.connected{background:#edf8f1;border-color:#c9e8d4;color:#31855d}
+html[data-theme="light"] .github-connect-button{background:#eeedff;border-color:#d9d5f6;color:#514994}
+html[data-theme="light"] .github-connect-button:hover{background:#e5e3ff}
+html[data-theme="light"] .integration-pending{color:#737c90}
+html[data-theme="light"] .repo-preview{border-color:#e5e7ef}
+html[data-theme="light"] .repo-preview>a{color:#3e475b;border-color:#eaecf1}
+html[data-theme="light"] .repo-preview>a small{color:#7b8496}

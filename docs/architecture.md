@@ -1,0 +1,9 @@
+# Astra architecture
+
+FastAPI owns the HTTP boundary and configuration. SQLAlchemy and Alembic persist users, sessions, personal workspaces, login throttles, GitHub authorization state, and encrypted GitHub account credentials. The Next.js dashboard reads API readiness server-side and calls session-protected endpoints for identity and repository browsing. The GitHub REST client bounds pagination, request time, response size, and file decoding.
+
+The shipped GitHub slice supports user authorization, refreshable account tokens, revocation, authorized repository listing/details, branches, commits, issues, pull requests, directories, and bounded text previews. Explicit issue creation is the first GitHub write action; CSRF protection and a durable idempotency/audit record guard the request. Workspace-scoped activity history exposes the outcome. Mutation records retain the connected GitHub login and outcome without storing the issue body, and survive account disconnection. User/session/workspace checks are applied before account credentials are decrypted.
+
+The task-planning slice is implemented with consent-gated OpenAI structured output, a bounded dependency graph validator, persisted plans and lifecycle events, and user/workspace-scoped history. Only the request, selected repository metadata, and a bounded root README excerpt are sent to the configured provider; provider response storage is disabled. Users can record one approve/reject review decision for a completed plan; it does not trigger GitHub writes or authorize code execution.
+
+The next architecture milestone is durable task execution with a typed tool registry, queue, worker, and approval gates. Any worker must use short-lived scoped credentials and isolated execution that cannot reach application secrets or other tenants. Untrusted repository code must stay disabled until this isolation is implemented and reviewed.
